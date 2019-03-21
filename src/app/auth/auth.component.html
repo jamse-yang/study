@@ -1,0 +1,23 @@
+<div for="Login">
+  <div>
+    <form [formGroup]="authForm" (ngSubmit)="submitForm()">
+      <div>
+        <input
+          formControlName="userName"
+          placeholder="이름"
+          type="text"
+        />
+      </div>
+      <div>
+        <input
+          formControlName="age"
+          placeholder="나이"
+          type="text"
+        />
+      </div>
+      <button class="btn" [disabled]="!authForm.valid">
+        로그인
+      </button>
+    </form>
+  </div>
+</div>

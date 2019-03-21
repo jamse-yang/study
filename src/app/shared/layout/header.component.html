@@ -1,0 +1,23 @@
+<nav class="navbar navbar-light">
+  <div class="container">
+    <ul>
+      <li class="nav-item">
+        <a class="navbar-brand" routerLink="/">main</a>
+      </li>
+      <ng-container *ngIf="!isLogin">
+        <li class="nav-item">
+          <a class="navbar-brand" routerLink="/auth">login</a>
+        </li>
+      </ng-container>
+      <ng-container *ngIf="isLogin">
+        <li class="nav-item">
+          <a class="navbar-brand" routerLink="/chat">chat</a>
+        </li>
+      </ng-container>
+    </ul>
+    <ng-container *ngIf="isLogin">
+      {{user.userName}}님 ({{user.age}})세 로그인함.
+      <button (click)="logout()">로그아웃</button>
+    </ng-container>
+  </div>
+</nav>

@@ -1,0 +1,19 @@
+<div style="min-height: 500px;">
+  <div style="border: 1px solid black; width: 500px; margin-bottom: 20px; margin-top: 20px;">
+    <label>입력 메시지: </label>
+    <input
+      type="text"
+      [(ngModel)]="inputText"
+    />
+    <button (click)="setChatMessage()">
+      입력
+    </button>
+  </div>
+  <div style="border: 1px solid black; float: left; width: 500px;">
+    <ul>
+      <li *ngFor="let chat of chatHistory.reverse()">
+        {{chat}}
+      </li>
+    </ul>
+  </div>
+</div>
